@@ -4,7 +4,7 @@ import os, random, string, base64
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'drawapp_secret_2024!'
-socketio = SocketIO(app, cors_allowed_origins="*", max_http_buffer_size=10 * 1024 * 1024)
+socketio = SocketIO(app, cors_allowed_origins="*", async_mode='threading', max_http_buffer_size=10 * 1024 * 1024)
 
 users = {}       # sid -> user info
 rooms = {}       # code -> room info
